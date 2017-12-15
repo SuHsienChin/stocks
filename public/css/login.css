@@ -1,0 +1,81 @@
+body {
+    margin:0;
+    padding:0;
+    background-color: #eee;
+    background: #000 url(../image/login_bg.jpg) center center fixed no-repeat;
+    -moz-background-size: cover;
+    background-size: cover;
+    min-width: 1170px;
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input.form-control {
+    background-color: gray;
+    border-color: gray;
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 45px;
+    color: white;
+    margin-bottom: -20px;
+}
+.form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+    padding-left: 77px;
+}
+.form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+    opacity:    1;
+}
+.form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    opacity:    1;
+}
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+.form-signin button, .form-signin button:hover, .form-signin button:active:focus, .form-signin button:active {
+    background-color: #73B629;
+    border-color: #73B629;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: white;
+}
+.btn-blue {
+    background-color: #375BA6 !important;
+    border-color: #375BA6 !important;
+    margin-top: 10px !important;
+}
+.form-signin img {
+    width: 30px;
+    position: relative;
+    left: 7px;
+    top: -16px;
+    z-index: 100;
+}

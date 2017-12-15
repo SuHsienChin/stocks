@@ -1,0 +1,192 @@
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+	
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+				<h3 class="messages"></h3>
+				<form action="">
+					<input id="m" autocomplete="off" /><button class="btn btn-success">Send</button>
+				</form>
+            </div>
+        </div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="col-md-6">
+					<ul>
+						<li>
+							<label id="BestAsk5"></label>
+							<div class="progress">
+								<div id="BestAskQty5" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestAsk4"></label>
+							<div class="progress">
+								<div id="BestAskQty4" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestAsk3"></label>
+							<div class="progress">
+								<div id="BestAskQty3" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestAsk2"></label>
+							<div class="progress">
+								<div id="BestAskQty2" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestAsk1"></label>
+							<div class="progress">
+								<div id="BestAskQty1" class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<hr size="10" />
+				<div class="col-md-6">
+					<ul>
+						<li>
+							<label id="BestBid1"></label>
+							<div class="progress">
+								<div id="BestBidQty1" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestBid2"></label>
+							<div class="progress">
+								<div id="BestBidQty2" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+							<li><label id="BestBid3"></label>
+							<div class="progress">
+								<div id="BestBidQty3" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestBid4"></label>
+							<div class="progress">
+								<div id="BestBidQty4" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+						<li>
+							<label id="BestBid5"></label>
+							<div class="progress">
+								<div id="BestBidQty5" class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    </div>
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="dist/js/bootstrap.min.js"></script>
+	
+	<!--<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>-->
+	<script src="http://127.0.0.1:3000/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+	<script>
+	$(function () {
+		var socket = io.connect('http://127.0.0.1:3000');
+		$('form').submit(function(){
+		socket.emit('SKStock', $('#m').val());
+		//$('#m').val('');
+		return false;
+	});
+		
+	//接收訊息
+	socket.on('SKStock', function(msg){
+		console.log('list',msg);
+		$('.messages').empty();
+		$('.messages').append('成交價=' + parseInt(msg.nClose)/100 + '  買價=' + parseInt(msg.nBid)/100 + '  賣價=' + parseInt(msg.nAsk)/100 );
+    });
+	
+	socket.on('SKBest5', function(bestData){
+		console.log('bestData',bestData);
+		$('#BestAsk1').empty();
+		$('#BestAsk1').append(parseInt(bestData.BestAsk1)/100);
+		$('#BestAsk2').empty();
+		$('#BestAsk2').append(parseInt(bestData.BestAsk2)/100);
+		$('#BestAsk3').empty();
+		$('#BestAsk3').append(parseInt(bestData.BestAsk3)/100);
+		$('#BestAsk4').empty();
+		$('#BestAsk4').append(parseInt(bestData.BestAsk4)/100);
+		$('#BestAsk5').empty();
+		$('#BestAsk5').append(parseInt(bestData.BestAsk5)/100);
+		
+		$('#BestBid1').empty();
+		$('#BestBid1').append(parseInt(bestData.BestBid1)/100);
+		$('#BestBid2').empty();
+		$('#BestBid2').append(parseInt(bestData.BestBid2)/100);
+		$('#BestBid3').empty();
+		$('#BestBid3').append(parseInt(bestData.BestBid3)/100);
+		$('#BestBid4').empty();
+		$('#BestBid4').append(parseInt(bestData.BestBid4)/100);
+		$('#BestBid5').empty();
+		$('#BestBid5').append(parseInt(bestData.BestBid5)/100);
+		
+		$('#BestAskQty1').empty();
+		$('#BestAskQty1').append(parseInt(bestData.BestAskQty1));
+		$('#BestAskQty1').attr('style','width:'+bestData.BestAskQty1+'%');
+		$('#BestAskQty2').empty();
+		$('#BestAskQty2').append(parseInt(bestData.BestAskQty2));
+		$('#BestAskQty2').attr('style','width:'+bestData.BestAskQty2+'%');
+		$('#BestAskQty3').empty();
+		$('#BestAskQty3').append(parseInt(bestData.BestAskQty3));
+		$('#BestAskQty3').attr('style','width:'+bestData.BestAskQty3+'%');
+		$('#BestAskQty4').empty();
+		$('#BestAskQty4').append(parseInt(bestData.BestAskQty4));
+		$('#BestAskQty4').attr('style','width:'+bestData.BestAskQty4+'%');
+		$('#BestAskQty5').empty();
+		$('#BestAskQty5').append(parseInt(bestData.BestAskQty5));
+		$('#BestAskQty5').attr('style','width:'+bestData.BestAskQty5+'%');
+		
+		$('#BestBidQty1').empty();
+		$('#BestBidQty1').append(parseInt(bestData.BestBidQty1));
+		$('#BestBidQty1').attr('style','width:'+bestData.BestBidQty1+'%');
+		$('#BestBidQty2').empty();
+		$('#BestBidQty2').append(parseInt(bestData.BestBidQty2));
+		$('#BestBidQty2').attr('style','width:'+bestData.BestBidQty2+'%');
+		$('#BestBidQty3').empty();
+		$('#BestBidQty3').append(parseInt(bestData.BestBidQty3));
+		$('#BestBidQty3').attr('style','width:'+bestData.BestBidQty3+'%');
+		$('#BestBidQty4').empty();
+		$('#BestBidQty4').append(parseInt(bestData.BestBidQty4));
+		$('#BestBidQty4').attr('style','width:'+bestData.BestBidQty4+'%');
+		$('#BestBidQty5').empty();
+		$('#BestBidQty5').append(parseInt(bestData.BestBidQty5));
+		$('#BestBidQty5').attr('style','width:'+bestData.BestBidQty5+'%');
+		//$('.messages').empty();
+      //$('.messages').append($('<li>').text('成交價=' + parseInt(msg.nClose)/100 + '  買價=' + parseInt(msg.nBid)/100 + '  賣價=' + parseInt(msg.nAsk)/100 ));
+	  //$('.messages').append('成交價=' + parseInt(msg.nClose)/100 + '  買價=' + parseInt(msg.nBid)/100 + '  賣價=' + parseInt(msg.nAsk)/100 );
+    });
+    
+  });
+</script>
+	
+</body>
+</html>

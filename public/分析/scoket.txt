@@ -1,0 +1,20 @@
+===============
+ws://t8899.cc:1280/    傳送有關下單
+
+===============
+ws://t8899.cc:1180/    傳送即時價格
+
+===============
+在點擊每個商品時的動作
+在desktop.js
+ $(".item-table").delegate("td.product_name", "click", function ()
+
+===============
+需要紀錄Local Storage
+col_hide		[["mini_chart","走勢"],["five-ratio","內外盤比"],["total_qty","總量"],["highest_price","最高價"],["lowest_price","最低價"],["yesterday_last_price","昨收算"],["newest_time","時間"],["open_price","開盤價"],["up_down_ratio","漲跌幅%"],["status","狀態"]]	
+col_show		[["product_name","商品名稱"],["stock","倉位"],["newest_price","成交價"],["bp_price","買進價"],["sp_price","賣出價"],["up_down","漲跌"],["yesterday_close_price","昨結盤"],["force_close","強平"],["final_date","最後交易日"],["k_bun","K棒"],["no_new","禁新"]]	
+item_hide		[["EXF","[台灣期貨交易所] 電子期"],["FXF","[台灣期貨交易所] 金融期"],["TSLQ","[台灣期貨交易所] 加權指"],["HSI","[香港交易所] 恆生期"],["E7","[芝加哥商品交易所] 歐元期"],["NK225","[日本交易所集團] 日經期"],["FDAX","[歐洲期貨交易所] 德指期"],["NQ","[芝加哥商品交易所] 那斯達"],["SI","[紐約商品期貨交易所] 白銀期"],["CN","[新加坡交易所] 中國期"],["CIF","[中國金融期貨交易所] 滬深期"]]	
+item_show		[["TXF","[台灣期貨交易所] 台指期"],["TXFAF","[台灣期貨交易所] 台盤後"],["GC","[紐約商品期貨交易所] 黃金期"],["CL","[紐約商品期貨交易所] 輕油期"],["YM","[芝加哥期貨交易所] 道瓊期"]]	
+percent			{"dragger_percent":0,"item_percent":60,"price_percent":60,"vertical_percent":5.4463}	
+tech_to			{"version":3.7,"tech_to":[["main_chart","〔 主圖表 〕"],["m_averge_line1","平均線(1)",[[0,"週期",1],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff1233"]],0],["m_averge_line2","平均線(2)",[[0,"週期",2],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff2233"]],0],["m_averge_line3","平均線(3)",[[0,"週期",3],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff3233"]],0],["m_averge_line4","平均線(4)",[[0,"週期",4],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff4233"]],0],["m_averge_line5","平均線(5)",[[0,"週期",5],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff5233"]],0],["m_averge_line6","平均線(6)",[[0,"週期",6],[1,"類型",0,"SMA","WMA","EMA"],[2,"MA","ff6233"]],0],["m_sar_line","SAR",[[0,"週期1",14],[2,"SAR","3cb371"]],0],["m_bollingerband_line","保力加通道",[[0,"週期1",20],[2,"MA","3cb371"],[2,"UP","ffb371"],[2,"DOWN","3cff71"]],0],["m_ichimoku_line","一目均衡表",[[0,"轉換週期",9],[0,"基準週期",26],[0,"先行週期",52],[2,"Tenkan","ffb371"],[2,"Kijun","1123ff"],[2,"SpanA","113371"],[2,"SpanB","2fa371"],[2,"Chinkou","11ff71"]],0],["tech_chart","〔 指標圖標 〕"],["t_kd_line","KD",[[0,"週期",9],[2,"K","…	
+web_content_set		A	
