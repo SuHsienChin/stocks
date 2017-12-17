@@ -1352,7 +1352,7 @@
                             <td style="width: 45px;" class="userinfo-item-daycover">否</td>
                             <td style="width: 100px;">09:15~12:00<br>
                                 13:00~16:30<br>
-                                午盤17:15~次日01:00<br< td="">
+                                午盤17:15~次日01:00<br/>< td="">
                                 </br<></td><td style="width: 65px;">停權</td>
                         </tr>
                         <tr class="userinfo-item-E7" lighting="1" limiting="1" submiting="-1" closing="1">
@@ -1560,9 +1560,9 @@
                         </form>
                     </div>
                     <div class="float-right">
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory(&quot;&quot;, &quot;&quot;, &quot;0&quot;)">今日</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory(&quot;&quot;, &quot;&quot;, &quot;7&quot;)">本週</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory(&quot;&quot;, &quot;&quot;, &quot;30&quot;)">本月</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory("", "", "0")">今日</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory("", "", "7")">本週</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getHistory("", "", "30")">本月</button>
                     </div>
                     <div class="clearfix"></div>
                     <table class="user-history-table full-width-table" style="border: 1px solid #222; margin-top: 10px;">
@@ -1837,9 +1837,9 @@
                         </form>
                     </div>
                     <div class="float-right">
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge(&quot;&quot;, &quot;&quot;, &quot;0&quot;)">今日</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge(&quot;&quot;, &quot;&quot;, &quot;7&quot;)">本週</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge(&quot;&quot;, &quot;&quot;, &quot;30&quot;)">本月</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge("", "", "0")">今日</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge("", "", "7")">本週</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getCharge("", "", "30")">本月</button>
                     </div>
                     <div class="clearfix"></div>
                     <table class="user-charge-table full-width-table" style="border: 1px solid #222; margin-top: 10px;">
@@ -2121,8 +2121,8 @@
                             <div style="margin-bottom: 5px;">新損失點需大於[&nbsp;&nbsp;<span class="min-stop-loss-point">0</span>&nbsp;&nbsp;]點</div>
                             <div style="margin-bottom: 5px;">
                                 新損失點: <span class="ui-spinner ui-widget ui-widget-content ui-corner-all"><input type="text" name="stop_loss_point" class="form-control input-sm spinner-style ui-spinner-input" style="width: 30px;" value="0" aria-valuenow="0" autocomplete="off" role="spinbutton"><a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-n">▲</span></span></a><a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-s">▼</span></span></a></span>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=stop_loss_point]&quot;).val(parseInt($(&quot;input[name=stop_loss_point]&quot;).val()) + 10); return false;">+10</button>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=stop_loss_point]&quot;).val(parseInt($(&quot;input[name=stop_loss_point]&quot;).val()) - 10); return false;">-10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=stop_loss_point]").val(parseInt($("input[name=stop_loss_point]").val()) + 10); return false;">+10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=stop_loss_point]").val(parseInt($("input[name=stop_loss_point]").val()) - 10); return false;">-10</button>
                             </div>
                             <button class="btn btn-primary btn-sm reset-stop-loss-button">清除設定</button>
                             <button class="btn btn-primary btn-sm update-stop-loss-button">送出</button>
@@ -2152,8 +2152,8 @@
                             <div style="margin-bottom: 5px;">新獲利點需大於[&nbsp;&nbsp;<span class="min-take-profit-point">0</span>&nbsp;&nbsp;]點</div>
                             <div style="margin-bottom: 5px;">
                                 新獲利點: <span class="ui-spinner ui-widget ui-widget-content ui-corner-all"><input type="text" name="take_profit_point" class="form-control input-sm spinner-style ui-spinner-input" style="width: 30px;" value="0" aria-valuenow="0" autocomplete="off" role="spinbutton"><a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-n">▲</span></span></a><a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-s">▼</span></span></a></span>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=take_profit_point]&quot;).val(parseInt($(&quot;input[name=take_profit_point]&quot;).val()) + 10); return false;">+10</button>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=take_profit_point]&quot;).val(parseInt($(&quot;input[name=take_profit_point]&quot;).val()) - 10); return false;">-10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=take_profit_point]").val(parseInt($("input[name=take_profit_point]").val()) + 10); return false;">+10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=take_profit_point]").val(parseInt($("input[name=take_profit_point]").val()) - 10); return false;">-10</button>
                             </div>
                             <button class="btn btn-primary btn-sm reset-take-profit-button">清除設定</button>
                             <button class="btn btn-primary btn-sm update-take-profit-button">送出</button>
@@ -2183,8 +2183,8 @@
                             <div style="margin-bottom: 5px;"><span class="min-invert-profit-point"></span></div>
                             <div style="margin-bottom: 5px;">
                                 新獲利點: <span class="ui-spinner ui-widget ui-widget-content ui-corner-all"><input type="text" name="invert_profit_point" class="form-control input-sm spinner-style ui-spinner-input" style="width: 30px;" value="0" aria-valuenow="0" autocomplete="off" role="spinbutton"><a class="ui-spinner-button ui-spinner-up ui-corner-tr ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-n">▲</span></span></a><a class="ui-spinner-button ui-spinner-down ui-corner-br ui-button ui-widget ui-state-default ui-button-text-only" tabindex="-1" role="button"><span class="ui-button-text"><span class="ui-icon ui-icon-triangle-1-s">▼</span></span></a></span>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=invert_profit_point]&quot;).val(parseInt($(&quot;input[name=invert_profit_point]&quot;).val()) + 10); return false;">+10</button>
-                                <button class="btn btn-primary btn-sm" onclick="$(&quot;input[name=invert_profit_point]&quot;).val(parseInt($(&quot;input[name=invert_profit_point]&quot;).val()) - 10); return false;">-10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=invert_profit_point]").val(parseInt($("input[name=invert_profit_point]").val()) + 10); return false;">+10</button>
+                                <button class="btn btn-primary btn-sm" onclick="$("input[name=invert_profit_point]").val(parseInt($("input[name=invert_profit_point]").val()) - 10); return false;">-10</button>
                             </div>
                             <button class="btn btn-primary btn-sm reset-invert-profit-button">清除設定</button>
                             <button class="btn btn-primary btn-sm update-invert-profit-button">送出</button>
@@ -2331,9 +2331,9 @@
                         </form>
                     </div>
                     <div class="float-right">
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction(&quot;&quot;, &quot;&quot;, &quot;0&quot;)">今日</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction(&quot;&quot;, &quot;&quot;, &quot;7&quot;)">本週</button>
-                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction(&quot;&quot;, &quot;&quot;, &quot;30&quot;)">本月</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction("", "", "0")">今日</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction("", "", "7")">本週</button>
+                        <button class="btn btn-primary btn-sm" onclick="tra.API.User.getAction("", "", "30")">本月</button>
                     </div>
                     <div class="clearfix"></div>
                     <table class="user-action-table full-width-table modal-scroll-table" style="border: 1px solid #222; margin-top: 10px;">

@@ -3915,6 +3915,7 @@ _main.tra.API.Custom = {
 			url: "/api/query_usersavedata",
 			type: "POST",
 			data: {
+                _token: "{{ csrf_token() }}",
 				Token: _main.tra.User.token,
 				UserID: _main.tra.User.user_id
 			},
@@ -3928,6 +3929,7 @@ _main.tra.API.Custom = {
 			url: "/api/set_usersavedata",
 			type: "POST",
 			data: {
+                _token: "{{ csrf_token() }}",
 				Token: _main.tra.User.token,
 				UserID: _main.tra.User.user_id,
 				UscommodityOn: JSON.stringify(item_setting["show"]),

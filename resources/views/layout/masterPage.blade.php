@@ -47,7 +47,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/multiselect.min.js')}}"></script>
-    <script src="{{asset('v')}}"></script>
+    <script src="{{asset('js/highstock.src.js')}}"></script>
     <script src="{{asset('js/highcharts-more.js')}}"></script>
     <!--<script src="{{asset('js/main.js')}}"></script>
     <script src="{{asset('js/api.js')}}"></script>
