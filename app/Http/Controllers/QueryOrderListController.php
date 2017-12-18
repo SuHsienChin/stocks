@@ -13,6 +13,7 @@ class QueryOrderListController extends Controller
             'Code' => 1,
             'ErrorMsg' => '',
             'OrderArray' => [],
+            'CoveredArray' => [],
             'UncoveredArray' => [],
             'CommodityArray' => [],
             'OrderSum' => 0,

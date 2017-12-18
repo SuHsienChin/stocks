@@ -52,12 +52,12 @@ class QueryMemberAndCommodityListController extends Controller
                     'SubmitMaxPoint' => '0',
                     'Submiting' => '-1',
                     'TradePoint' => '1',
-                    'TradeTime' => '08=>45~13=>45',
+                    'TradeTime' => '08:45~13:45',
                 ],
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '500',
                     'ID' => 'HSI',
                     'Lighting' => '1',
@@ -80,7 +80,7 @@ class QueryMemberAndCommodityListController extends Controller
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '300',
                     'ID' => 'E7',
                     'Lighting' => '1',
@@ -103,7 +103,7 @@ class QueryMemberAndCommodityListController extends Controller
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '800',
                     'ID' => 'NK225',
                     'Lighting' => '1',
@@ -126,7 +126,7 @@ class QueryMemberAndCommodityListController extends Controller
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '300',
                     'ID' => 'FDAX',
                     'Lighting' => '1',
@@ -149,7 +149,7 @@ class QueryMemberAndCommodityListController extends Controller
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '200',
                     'ID' => 'YM',
                     'Lighting' => '1',
@@ -172,7 +172,7 @@ class QueryMemberAndCommodityListController extends Controller
                 [
                     'Closing' => '1',
                     'CoverPercent' => '7',
-                    'DayCover' => '1',
+                    'DayCover' => '0',
                     'Fee' => '300',
                     'ID' => 'CL',
                     'Lighting' => '1',

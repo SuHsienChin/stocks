@@ -2106,7 +2106,7 @@ _main.tra.API = {
 				if (edata.length > 1) {
 					res = edata.substring(2).split(",");
 				}
-console.log('res',res); //2017-12-08 suking加
+//      console.log('res',res); //2017-12-08 suking加
 				switch (event_type) {
 					case "a":
 						//商品開盤通知， res[0] = 商品代碼 1=時間 2=開盤價
@@ -3711,11 +3711,12 @@ _main.tra.OrderAPI = {
 			type: "POST",
 			data: data
 		}).done(function (res) {
-			res = JSON.parse(res);
+			//res = JSON.parse(res);
 			_main.tra.Order.render.Money(res["MoneyArray"]);
 		});
 	},
 	getAll: function getAll() {
+
 		$.ajax({
 			url: "/api/query_orderlist",
 			type: "POST",
@@ -3724,7 +3725,8 @@ _main.tra.OrderAPI = {
 				"UserID": _main.tra.User.user_id
 			}
 		}).done(function (res) {
-			res = JSON.parse(res);
+            //console.log('這是=',res);
+			//res = JSON.parse(res);
 			if (res["Code"] < 0) {
 				alert(res["ErrorMsg"]);
 				location.href = "logout.php";
